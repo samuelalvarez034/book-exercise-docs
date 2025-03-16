@@ -17,7 +17,7 @@ En mi caso, he optado por instalar una WSL (Windows Subsystem Linux), en concret
   -Los requirements del archivo basic_imports.txt del repositorio de python
   -Apache Maven 3.8
 
-Como editor de código, estoy desarrollando el proyecto el Visual Studio Code. Para poder conectarlo a la WSL tuve que instalar el plugin de WSL en VSCode, y asi poder trabajar con el enviroment que habia creado. Además, también instalé el pluggin de Maver for java para poder correr los test de java en el editor de código.
+Como editor de código, estoy desarrollando el proyecto el Visual Studio Code. Para poder conectarlo a la WSL tuve que instalar el plugin de WSL en VSCode, y asi poder trabajar con el enviroment que habia creado.
 
 En el CDA, lo único que he cambiado fue el archivo ConfigConst.py, exactamente el el valor de DEFAULT_CONFIG_FILE_NAME, ya que para que funcionara, había que indicarle la ruta completa de PiotConfig.props, donde se encuentran todas las configuraciones del proyecto.
 
@@ -36,7 +36,7 @@ How does your implementation work?
 
 NOTE: Be sure to include the branch 
 
-URL:
+URL: https://github.com/samuelalvarez034/python-components/tree/Lab01
 
 ### Unit Tests Executed
 
