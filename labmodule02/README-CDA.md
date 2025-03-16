@@ -8,6 +8,8 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
+Esta implementación sirve para desarrollar las tareas que forman parte de un sistema de monitoreo, cuyo propósito principal es monitorear y recolectar información sobre el rendimiento del sistema, específicamente los recursos de hardware como el uso de la CPU y la memoria del sistema.
+
 What does your implementation do? 
 
 Las clases que he implementado son:
