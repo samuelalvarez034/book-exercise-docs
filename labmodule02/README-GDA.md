@@ -8,11 +8,15 @@ Be sure to implement all the PIOT-GDA-* issues.
 
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
-Esta implementación sirve para desarrollar las tareas que forman parte de un sistema de monitoreo, cuyo propósito principal es monitorear y recolectar información sobre el rendimiento del sistema, específicamente los recursos de hardware como el uso de la CPU y la memoria del sistema.
-
 What does your implementation do? 
 
+En esta implementación, se han agregado funcionalidades de monitoreo de rendimiento del sistema a las aplicaciones CDA y GDA. Se desarrollan módulos para recopilar métricas como el uso de CPU y memoria en intervalos de tiempo, que estarán gestionados por un "Manager". Para ello, estas funcionalidades se crean en clases específicas y luego se incorporan a la aplicación principal. Por último se validan con tests para asegurar su correcto desarrollo. 
 En esta práctica, he creado las siguientes clases:
+
+
+How does your implementation work?
+
+Se han implementado las siguientes clases:
 
 1. GatewayDeviceApp: esta clase se encargará de gestionar la ejecución de la aplicación GDA, es decir, la inicialización, incio y detención de la aplicación. Contiene un metodo parseArgs() que es el encargado de procesar los parámetros de la línea de comandos; initConfig() que se encargará de iniciar la configuración de la aplicación; un startApp() que se encarga de inciar la aplicación; un stopApp() que se encargará de finalizar la aplicación; y por último un main que crea una instancia de GatewayDeviceApp, llama a startApp(), espera unos segundos y llama a stopApp().
 
@@ -23,9 +27,8 @@ En esta práctica, he creado las siguientes clases:
 4. SystemCpuUtilTask: Esta clase hereda de BaseSystemUtilTask, y se encargará de recopilar el porcentaje de uso de la CPU, para ello, utiliza la librería psutil. Contiene el método getTelemetryValue(), que retorna el uso.
 
 5. SystemMemUtilTask: Esta clase hereda de BaseSystemUtilTask, y se encargará de recopilar el porcentaje de uso de la memoria, para ello, utiliza la libreria ManagementFactory, que contiene métodos específicos. Contiene el método getTelemetryValue(), que retorna el uso.
-   
 
-How does your implementation work?
+Una vez creadas las clases, se integran de la siguiente forma:
 
 En primer lugar, importamos la clase SystemPerformanceManager en la clase GatewayDeviceApp. Creamos una instancia del SystemPerformanceManager y cuando se llama al método starApp(), tambien llamamos al método startManager(), y de igual manera, cuando llamamos a stopApp(), también llamamos al metodo stopManager().
 
