@@ -9,7 +9,12 @@ Be sure to implement all the PIOT-GDA-* issues (requirements) listed.
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
 What does your implementation do? 
-En esta practica he modificado las clases:
+
+En esta práctica, se ha realizado la integración y gestión de datos mediante la conversión a formato JSON. Se implementa un un sistema para serializar y deserializar datos de sensores y actuadores, permitiendo la comunicación eficientes entre aplicaciones.
+
+How does your implementation work?
+
+Se han implementado las siguientes clases:
 
 1. BaseIotData: Esta clase es la base de todas las demas clases de datos.
   
@@ -26,9 +31,6 @@ A mayores, se ha modificado la clase SystemPerformanceManager para la almacenar 
 Tambien se a modificado la clase DeviceDataManager, que se encargaba de coordinar la comunicación entre diversos componentes. Ahora se le permite conectarse a diferentes servicios como la nube, un servidor MQTT, manejando todas las solucitudes de datos.
 
 Por último, integramos en GatewayDeviceApp la clase DeviceDataManager. Dentro de los métodos startApp() y stopApp() de GatewayDeviceApp, integramos los métodos startManager() y stopManager() de DeviceDataManager. De esta forma, trasladamos el manejo de SystemPerformanceManager a DeviceDataManager, por lo que se eliminan las referencias a SystemPerformanceManager dentro del GatewayDeviceApp. Para terminar,el DeviceDataManager se registra como un IDataMessageListener en SystemPerformanceManager, utilizando el método setDataMessageListener(this). Esto establece que DeviceDataManager recibirá los mensajes del SystemPerformanceManager.
-
-How does your implementation work?
-
 
 ### Code Repository and Branch
 
