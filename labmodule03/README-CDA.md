@@ -8,9 +8,11 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
-El objetivo de estas implementaciones es crear clases para representar y manejar datos de sensores, actuadores y del rendimiento del sistema, que heredan de una clase base BaseIotData, y así tener una estructura común y reutilizable para el tratamiento de datos en la arquitectura IoT (Internet of Things).
-
 What does your implementation do? 
+
+Se ha implementadoa una simulación de datos mediante un generador que simula sensores de temperatura, humedad y presión. A mayores de los sensores, también se incorporan la simulación de actuadores, con  mecanismos de activación para simular las acciónes de estos mediante mensajes. Por último, se ejecutan los tests para ver que todo funciona correctamente.
+
+How does your implementation work?
 
 Las clases que he implementado o modificado en este lab son:
 
@@ -41,9 +43,6 @@ Las clases que he implementado o modificado en este lab son:
 13. SensorAdapterManager: Esta clase se encarga de administrar y coordinar los sensores simulados. Tiene un startManager() y un stopManager() para arrancar y detener el sistema de sensores; además, tiene un método _initEnvironmentalSensorTasks que se encarga de crear los simuladores y de generar datasets con valores aleatorios; un setDataMessageListener() que permite conectar la clase con otro componenente para que procese los datos; un handleTelemetry() que se encarga de generar los datos, imprimirlos y enviarlos al listener para que otro componente los procese.
 
 14. ActuatorAdapterManager: Esta clase se encarga de gestionar y controlar los actuadores. Contiene un método _initEnvironmentalActuationTasks que se encarga de inicializar los actuadores; un sendActuatorCommand() que recibe comandos y se los envía a los actuadores correspondientes;  y un setDataMessageListener() que sirve para configurar el listener y que los actuadores puedan enviar respuestas de vuelta.
-
-
-How does your implementation work?
 
 Una vez que los sensores y actuadores están creados, se coordina todo desde el DeviceDataManager. Contiene métodos públicos como handleActuatorCommandMessage() que procesa los comandos que le llegan para los actuadores; un handleActuatorCommandResponse() que procesa las respuestas de los actuadores; un handleIncommingMessage() que recibe los mensajes del GDA; un handleSensorMessage() que recige datos del sensor y analiza si actuar o no; y un handleSystemPerformanceMessage() que recibe los datos del rendimiento del sistema. 
 
