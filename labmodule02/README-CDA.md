@@ -8,9 +8,11 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
-Esta implementación sirve para desarrollar las tareas que forman parte de un sistema de monitoreo, cuyo propósito principal es monitorear y recolectar información sobre el rendimiento del sistema, específicamente los recursos de hardware como el uso de la CPU y la memoria del sistema.
-
 What does your implementation do? 
+
+En esta implementación, se han agregado funcionalidades de monitoreo de rendimiento del sistema a las aplicaciones CDA y GDA. Se desarrollan módulos para recopilar métricas como el uso de CPU y memoria en intervalos de tiempo, que estarán gestionados por un "Manager". Para ello, estas funcionalidades se crean en clases específicas y luego se incorporan a la aplicación principal. Por último se validan con tests para asegurar su correcto desarrollo. 
+
+How does your implementation work?
 
 Las clases que he implementado son:
 
@@ -26,8 +28,8 @@ Las clases que he implementado son:
 
   6. SystemCpuUtilTask.py: Hereda de la clase BaseSystemUtilTask.py, he implementa el método getTelemetryValue() para obtener el porcentaje actual de uso de la CPU.
 
-How does your implementation work?
-
+  Por último, integramos todo de la siguiente manera:
+  
   Importamos el SystemPerformanceManager en ConstrainedDeviceApp. Primero creamos una instancia del SystemPerformanceManager y cuando la aplicación se arranque, se llama al método startManager(), y cuando se detenga, a stopManager().
 
   Además, necesitamos conectar las clases SystemCpuUtilTask y SystemMemUtilTask con la clase SystemPerformanceManager, que es la encargada de gestionar el rendimiento del dispositivo. Para ello, el método handleTelemetry() de SystemPerfomanceManager(), obtinene los valores de uso de la CPU  y de memoria utilizando instancias de SystemCpuUtilTask y SystemMemUtilTask, para luego resgistrarlas con un Logger. A mayores, importa ScheduledExecutorService y Executors, que sirven para ejecutar periodecamente tareas. Cuando se llama al método startManager(), se inicializa un  ScheduledExecutorService para ejecutar la tarea de handleTelemetry() cada "pollRate" segundos.
