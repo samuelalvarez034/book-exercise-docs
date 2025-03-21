@@ -8,11 +8,15 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
-El objetivo de las implementaciones es tener tareas que emulen sensores, simulando los comportamientos del hardware, utilizando específicamente los emuladores de Sense HAT.
-
 What does your implementation do? 
 
+En esta práctica, se amplian funcionalidades de la aplicación CDA, utilizando el emulador Sense HAT para simular sensores reales de temperatura, humedad y presión. Además, se implementa una pantalla LED del emulador para simular respuestas del sistema. Por último, se ejecutan los test para ver que el funcionamiento es el correcto.
+
+How does your implementation work?
+
 En primer lugar, lleve a cabo la instalación y configuración del emulador Sense-Emu y la instalación de la libreria Pisense. El único problema fue que la versión de la librería Pillow, que sirve para procesar imagenes, era la última, y esta ya no tiene muchos de los métodos aplicados en el CDA, como .textsize(). Para solucionarlo, instale manualmente la versión 9.5.0.
+
+Las clases que se han implementado son:
 
 1. BaseSensorSimTask: Esta clase se vuelve a utilizar como plantilla, de la cual deben heredad todas las tareas de emulación.
 
@@ -28,8 +32,7 @@ En primer lugar, lleve a cabo la instalación y configuración del emulador Sens
 
 7. LedDisplayEmulatorTask: Esta clase hereda de BaseActuatroSimTask, y sirve para simular un actuador de pantalla LED utilizando el emulador de Sense HAT. También tiene los métodos de _activateActuator() y _deactivateActuator().
 
-
-How does your implementation work?
+Una vez implemetadas, las integramos de la siguiente manera:
 
 Modificamos la clase de SensorAdapterManager para integrar ahora la funcionalidad del emuladores de humedad, presión y temperatura utilizando las bibliotecas de emulación de Sense-Emu y Pisense.
 
