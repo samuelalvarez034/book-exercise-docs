@@ -33,6 +33,8 @@ Uno de los principales problemas que encontre en la configuración del entorno, 
 
 Por último, la poca familiarización con github también me dificultó el entender como se trabajaría con las ramas, o como conectarse desde VSCode.
 
+Pasos para abrir el proyecto:
+
   1. Entrar en Ubuntu
   2. Moverse a la carpeta programmingtheiot
   3. Arrancar el entorno virutal con (. .venv/bin/activate)
