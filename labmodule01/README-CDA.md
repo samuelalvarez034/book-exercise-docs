@@ -9,7 +9,15 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
 What does your implementation do? 
-En esta parte, no se ha implementado nada en de codigo, si no que se ha dedicado a la creación y configuración del entorno para que el proyecto funcione correctamente.
+
+En esta parte, no se ha implementado nada en de codigo, si no que se ha dedicado a la creación y configuración del entorno para trabajas con una aplicación IoT. En concreto:
+  1. Se ha configurado el entorno de desarrollo, estableciendo el el software necesario como python, Java, Git y Visual Studio Code.
+  2. Clonar las aplicaciones CDA (código en python) y GDA (código en Java), y se han probado
+  3. Gestionar ramas con Git, aprendiendo conocimientos básicos.
+  4. Ejecutar pruebas para asegurar un desarrollo correcto.
+
+
+How does your implementation work?
 
 En mi caso, he optado por instalar una WSL (Windows Subsystem Linux), en concreto Ubuntu 24. En él, he creado la carpeta programmingtheiot, la cual he clonado los repositorios de python-components(CDA) y el de java-components(GDA). Además, he creado un entorno virtual para trabajar en el proyecto, en el cual he instalado lo siguiente:
   -Python 3.12
@@ -24,8 +32,6 @@ En el CDA, lo único que he cambiado fue el archivo ConfigConst.py, exactamente 
 Uno de los principales problemas que encontre en la configuración del entorno, fue declarar el PYTHONPATH, ya que al querer ejecutar código, visual no encontraba los paquetes. Para solucionarlo, incluí el PYTHONPATH en el .bashrc para que siempre lo encuentre correctamente. Otro de los principales problemas fue conectar VSCode a Ubuntu, ya que tuve que instalar un pluggin de WSL para que funcionara, el cual crea un servidor externo para conectarlos.
 
 Por último, la poca familiarización con github también me dificultó el entender como se trabajaría con las ramas, o como conectarse desde VSCode.
-
-How does your implementation work?
 
   1. Entrar en Ubuntu
   2. Moverse a la carpeta programmingtheiot
