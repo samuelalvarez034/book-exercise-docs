@@ -10,7 +10,11 @@ NOTE: Include two full paragraphs describing your implementation approach by ans
 
 What does your implementation do? 
 
+El objetivo principal de esta practica es añadir un sensor y un actuador en el sistema, en este caso, un sensor que mida la calidad del aire (CO2), y un acutador que será un purificador del aire.
+
 How does your implementation work?
+
+
 
 ### Code Repository and Branch
 
