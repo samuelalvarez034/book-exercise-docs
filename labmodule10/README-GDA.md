@@ -31,7 +31,10 @@ Para esto, se implementan los siguientes métodos:
   - handleIncomingDataAnalysis(): Decide como analiza el dato basándose en su tipo
   - handleHumiditySensorAnalysis(): Analiza el valor de humedad recibido
   - sendActuatorCommandtoCda(): Envía un comando ActuatorData al CDA vía MQTT o CoAP.
-  - getDateTimeFromData(): Extrae la fecha y hora del dato 
+  - getDateTimeFromData(): Extrae la fecha y hora del dato
+
+    ![image](https://github.com/user-attachments/assets/a4fb0dfa-bd42-43ec-ac5f-2d93540a958b)
+
 
 ### Code Repository and Branch
 
