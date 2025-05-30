@@ -34,7 +34,9 @@ Luego modifico la clase CloudClientConnector, en ella se implementan los siguien
 
 Por último se integra en DeviceDataManger para que al iniciar el manager se puedan enviar datos a la nube y recibirlos.
 
-  
+![image](https://github.com/user-attachments/assets/9e29eb06-1769-4bbc-8db2-b6e42921e773)
+
+
 ### Code Repository and Branch
 
 NOTE: Be sure to include the branch.
